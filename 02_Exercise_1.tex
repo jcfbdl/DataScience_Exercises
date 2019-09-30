@@ -8,7 +8,7 @@
 
 \begin{align}
     \begin{split}
-        P(X=k) =& \; \frac{\lambda^k e^{-\lambda}}{k!} \;\; ; \; X \sim P(\lambda) \\
+        P(X=k) =& \; \frac{\lambda^k e^{-\lambda}}{k!} \;\; ; \; X \sim P(\lambda) \\ \\
         E[X] =& \; \sum_{k=0}^{\infty} k \cdot P(X=k) \\
         \Rightarrow \; E[X] =& \; \sum_{k=0}^{\infty} k \cdot \frac{\lambda^k \cdot e^{-\lambda}}{k!} \\
         \Rightarrow \; E[X] =& \; \sum_{k=1}^{\infty} \frac{\lambda^{k} e^{-\lambda}}{(k-1)!} \\
@@ -18,7 +18,7 @@
     \end{split}
 \end{align}
 
-As we can see, the estimator is the mean of the sample. The expected value of a Poisson random variable is equal to its paramenter $\lambda$, therefore the sample mean is an unbiased estimator of the expected value.
+As we can see, the estimator is the mean of the sample. The expected value of a Poisson random variable is equal to its parameter $\lambda$, therefore the sample mean is an unbiased estimator of the expected value.
 
 \subsubsection{Variance}
 
@@ -50,5 +50,5 @@ As shown in the plot, the distribution is centered on 0.5 and we clearly see the
 \section{Question 4}
 Graph 4 shows the the impact of the number of observations on the estimator's volatility. The marginal change in speed of convergence is descending and we can reach a reasonably good measure (i.e. converge to the real value) with relatively few observations.
 \section{Question 5}
-Plots 5.1-4 show the comparison in distribution between the estimator and its gaussian approximation. We can clearly state that the convergence in distribution towards a Normal distribution is very quick and remains accurate even with a small number of observations. Again, the estimator itself is a random variable!
+Plots 5.1-4 show the comparison in distribution between the estimator and its Gaussian approximation. We can clearly state that the convergence in distribution towards a Normal distribution is very quick and remains accurate even with a small number of observations. Again, the estimator itself is a random variable!
 \section{Question 6}
