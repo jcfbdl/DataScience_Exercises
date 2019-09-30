@@ -6,21 +6,18 @@ The R-code used to produce the results presented is the following:
 
 \begin{verbatim}
 
-
 ###################################################################
-#HEC Lausanne - MScF
-#Data Science for Finance
-#Exercise Session 2 - 27.09.2019
-#Marceau Pierron, Taulant Ukshini, David Sasselli, Nora Koennyu
-###################################################################
-
-
-
-###################################################################
-#Question 2.1 - graphing the distribution of the average randomly drawn from
-#               a Poisson distribution with different sample sizes
+# HEC Lausanne - MScF
+# Data Science for Finance
+# Exercise Session 2 - 27.09.2019
+# Nora Koennyu, Marceau Pierron, Taulant Ukshini, David Sasselli
 ###################################################################
 
+###################################################################
+# Question 1.3 - graphing the distribution of the average randomly
+#               drawn from a Poisson distribution with different
+#               sample sizes
+###################################################################
 
 #initialization
 mutotal=c()
@@ -57,7 +54,7 @@ for(k in c(2,3,4)){
 }
 
 legend(x="right",y=0.92,c("30 Observations","100 Observations",
-                                  "1000 Observations","10000 Observations"),
+                        "1000 Observations","10000 Observations"),
        cex=0.8,
        lty=1,
        col=colours,
@@ -66,9 +63,8 @@ legend(x="right",y=0.92,c("30 Observations","100 Observations",
 dev.off()
 
 ###################################################################
-#Question 2.2 - graphing the standard deviation
+# Question 1.4 - graphing the standard deviation
 ###################################################################
-
 
 #calculating standard deviation
 mu_func = function(n){
@@ -80,7 +76,6 @@ mu_func = function(n){
   }
   
   return(sd(mu))
-  
 }
 
 func_1 = function(x){
@@ -117,10 +112,9 @@ legend(x="right",y=0.92,c("Estimated Volatility of the Estimator","1/sqrt(n)"),
 dev.off()
 
 ###################################################################
-# Question 1.3 - graphing the distribution of the estimator along with
-#                the normal distribution
+# Question 1.5 - graphing the distribution of the estimator along
+#                with the normal distribution
 ###################################################################
-
 
 postscript("Q1_5plot.eps")
 layout(matrix(1:4,2,2))
@@ -138,7 +132,6 @@ dev.off()
 ###################################################################
 # Question 2.1 - computing optimal portfolio
 ###################################################################
-
 
 #loading data
 X=read.delim("data_lausanne_equity.csv",sep=";",header=FALSE)
@@ -158,9 +151,11 @@ w=1/gamma*sigma_inv%*%mu2
 
 postscript("Q2_2plot.eps")
 variance_of_return = t(w)%*%sigma%*%w
-performance = t(mu2)%*%w                  #expected return on the portfolio               
+performance = t(mu2)%*%w         #expected return on the portfolio               
 print(paste("Expected return on the portfolio = ", performance))
-print(paste("Expected variance of the portfolio = ",variance_of_return))
+print(paste("Expected variance of the portfolio =
+        ",variance_of_return))
+        
 plot(seq(-0.5,0.5,by=0.01), 
      dnorm(seq(-0.5,0.5,by=0.01), mean=performance, sd=sqrt(variance_of_return)),
      xlab="Performance",
